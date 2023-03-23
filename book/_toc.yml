@@ -42,7 +42,7 @@ parts:
 
 - caption: Chapter Eight
   chapters:
-    - file: chapters/reproducibility
+    - file: chapters/Reproducibility_EC
 
 - caption: Chapter Nine
   chapters:
