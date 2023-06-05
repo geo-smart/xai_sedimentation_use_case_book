@@ -1,0 +1,924 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>SHAP Analysis &#8212; Use Case Template</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Workflow Management / Cloud Computing" href="workflow.html" />
+    <link rel="prev" title="Bayesian Ridge Regression Implementation" href="training_EC.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/GeoSMART_logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Use Case Template</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  About
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://geo-smart.github.io/index.html">
+   Geosmart Website
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://foundations.projectpythia.org/landing-page.html">
+   Project Pythia Foundations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   About Use Case Library
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter One
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="motivation_EC.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter Two
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="methods_EC.html">
+   Interpretable Models
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter Three
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_EC.html">
+   Brief Data Descriptions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter Five
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="training_EC.html">
+   Bayesian Ridge Regression Implementation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter Six
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   SHAP Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter Seven
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="workflow.html">
+   Workflow Management / Cloud Computing
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter Eight
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Reproducibility_EC.html">
+   Reproducibility
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter Nine
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="conclusion_EC.html">
+   Conclusion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter Ten (optional)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="todo.html">
+   Try something on your own
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter Eleven (optional)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="questions.html">
+   Open questions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter Twelve (optional)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="troubleshooting.html">
+   Trouble Shooting
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter Thirteen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="example.html">
+   Sample Jupyter Notebook
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../reference/glossary.html">
+   Glossaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../reference/bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/geo-smart/use_case_template/main?urlpath=lab/tree/book/chapters/evaluation_EC.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/geo-smart/use_case_template"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/geo-smart/use_case_template/issues/new?title=Issue%20on%20page%20%2Fchapters/evaluation_EC.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/geo-smart/use_case_template/edit/main/book/chapters/evaluation_EC.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapters/evaluation_EC.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   SHAP Analysis
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shap-on-the-bayesian-ridge-regression">
+   SHAP on the Bayesian Ridge Regression
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partial-dependence-plots-and-shap-dependence-plots">
+   Partial Dependence Plots and SHAP Dependence Plots
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shap-analysis-for-gaussian-process-regression">
+   SHAP Analysis for Gaussian Process Regression
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>SHAP Analysis</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   SHAP Analysis
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shap-on-the-bayesian-ridge-regression">
+   SHAP on the Bayesian Ridge Regression
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partial-dependence-plots-and-shap-dependence-plots">
+   Partial Dependence Plots and SHAP Dependence Plots
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shap-analysis-for-gaussian-process-regression">
+   SHAP Analysis for Gaussian Process Regression
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all packages</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="kn">import</span> <span class="nn">textwrap</span> 
+
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span> 
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
+
+<span class="kn">import</span> <span class="nn">shap</span> 
+
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span> 
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span> 
+
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">KFold</span><span class="p">,</span> <span class="n">cross_validate</span><span class="p">,</span> <span class="n">cross_val_predict</span><span class="p">,</span> <span class="n">RepeatedKFold</span><span class="p">,</span> <span class="n">cross_val_score</span><span class="p">,</span> <span class="n">GridSearchCV</span> 
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span><span class="p">,</span> <span class="n">mean_absolute_error</span> 
+
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/etiennechenevert/opt/anaconda3/envs/qwasd/lib/python3.9/site-packages/tqdm/auto.py:22: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id='_SHAP'></a></p>
+<section id="shap-analysis">
+<h1>SHAP Analysis<a class="headerlink" href="#shap-analysis" title="Permalink to this headline">#</a></h1>
+<p>SHapley Additive exPlanations, SHAP, is a python package to explain how your model makes predictions after training. This is called <em>post hoc explainability</em> by Roscher et al 2020. The analysis that I present will show how to use some basic functions in the package to gather feature importance and feature dependence plots. However, there is a variety of other types of analysis one could do, depending on the model, that are described in the docs: <a class="reference external" href="https://shap.readthedocs.io/en/latest/">https://shap.readthedocs.io/en/latest/</a></p>
+</section>
+<section id="shap-on-the-bayesian-ridge-regression">
+<h1>SHAP on the Bayesian Ridge Regression<a class="headerlink" href="#shap-on-the-bayesian-ridge-regression" title="Permalink to this headline">#</a></h1>
+<p>To get a basic understanding of what the Shapely values are and how to use them, I will give some explanations using the Bayesian Ridge, linear regression model. I do this because we already know how a linear regression model will approximate the output variable and can witness how shapely values are able to capture our expectations.</p>
+<p>Shapely values are an explanation technique acquired from game theory that seek to quantify the involvement of players in a game. While this is an abstract notion, our use case defines the “players” as the features in the GPR model, and the “game” as the task of predicting vertical accretion rates.</p>
+<p>The direct computation of individual shapely values can be extremely computationally expensive. This is due to each individual shapely value quantifying the contribution of single sample of a single feature within a group of many features on the target variable. To do this, we include and exclude a feature from every possible set of the features that comprise the GPR model we defined. For instance, let this feature be the <span class="math notranslate nohighlight">\(j^{th}\)</span> feature. We then randomly sample a value from each feature of the subset, compute the estimated outcome including the random sample of the <span class="math notranslate nohighlight">\(j^{th}\)</span> feature, compute the estimated outcome excluding the <span class="math notranslate nohighlight">\(j^{th}\)</span> feature, then subtract the two estimations from each other. The difference is the shapely value, making the shapely value the average contribution of a feature across all possible subsets of features. This can be thought of mathematically below (Molnar 2019, Štrumbelj and Kononenko 2014):
+$<span class="math notranslate nohighlight">\(\phi_j=\frac{1}{M} \sum_{m=1}^{M} \hat{f}(x)_{-j}^m - \hat{f}(x)_{+j}^m\)</span>$
+Equation 9</p>
+<p>Where <span class="math notranslate nohighlight">\(\hat{f}(x)_{-j}^m\)</span> is excluding the feature of interest, the <span class="math notranslate nohighlight">\(j^{th}\)</span> feature, for the <span class="math notranslate nohighlight">\(m^th\)</span> subset and <span class="math notranslate nohighlight">\(\hat{f}(x)_{+j}^m\)</span> is including the feature of interest for the m^th subset. In our case the Shapely values will be in terms of influence on vertical accretion rate mm/yr. To overcome the computational expense of this process, an appropriate approximation method, such as a Monte-Carlo sampling method, is often employed to optimize the computation (Štrumbelj and Kononenko 2014).</p>
+<p>Below, we show a bar plot of feature importances computed from shapely values. the importance scores are determined by averaging the absolute shapely values per feature across the data such that (Molnar 2019):</p>
+<div class="math notranslate nohighlight">
+\[ Importance_j = \frac{1}{N} \sum_{n = 1}^{N} |\phi_j^n|\]</div>
+<p>Equation 10</p>
+<p>Where <span class="math notranslate nohighlight">\(Importance_i\)</span> indicates the importance of the <span class="math notranslate nohighlight">\(j^{th}\)</span> feature, <span class="math notranslate nohighlight">\(\phi_j^n\)</span> indicates the shapely value of the <span class="math notranslate nohighlight">\(i^{th}\)</span> sample of the <span class="math notranslate nohighlight">\(j^{th}\)</span> feature, and <span class="math notranslate nohighlight">\(N\)</span> indicates the total number of samples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make a dataframe specifically for shap</span>
+<span class="n">shap_df</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">bestfeatures</span><span class="p">]</span>
+<span class="c1"># include &quot;standardized&quot; in the feature names to make it clear that these features are standardized/scaled</span>
+<span class="n">shap_df</span> <span class="o">=</span> <span class="n">shap_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Tidal Amplitude (cm)&#39;</span><span class="p">:</span> <span class="s1">&#39;Standardized Tidal Amplitude&#39;</span><span class="p">,</span>
+                                 <span class="s1">&#39;Avg. Flood Depth (cm)&#39;</span><span class="p">:</span><span class="s1">&#39;Standardized Avg. Flood Depth&#39;</span><span class="p">,</span>
+                                 <span class="s1">&#39;90th Percentile Flood Depth (cm)&#39;</span><span class="p">:</span> <span class="s1">&#39;Standardized 90th Percentile Flood Depth&#39;</span><span class="p">,</span>
+                                 <span class="s1">&#39;Soil Porewater Salinity (ppt)&#39;</span><span class="p">:</span> <span class="s1">&#39;Standardized Soil Porewater Salinity (ppt)&#39;</span><span class="p">,</span> 
+                                 <span class="s1">&#39;NDVI&#39;</span><span class="p">:</span> <span class="s1">&#39;Standardized NDVI&#39;</span><span class="p">,</span> 
+                                 <span class="s1">&#39;TSS (mg/l)&#39;</span><span class="p">:</span> <span class="s1">&#39;Standardized TSS&#39;</span><span class="p">,</span> 
+                                 <span class="s1">&#39;Avg. Time Flooded (%)&#39;</span><span class="p">:</span> <span class="s1">&#39;Standardized Avg. Time Flooded&#39;</span><span class="p">,</span>
+                                 <span class="s1">&#39;10th Percentile Flood Depth (cm)&#39;</span><span class="p">:</span> <span class="s1">&#39;Standardized 10th Percentile Flood Depth&#39;</span><span class="p">,</span>
+                                 <span class="s1">&#39;Windspeed (m/s)&#39;</span><span class="p">:</span> <span class="s1">&#39;Standarized Windspeed (m/s)&#39;</span><span class="p">}</span>
+                        <span class="p">)</span>
+
+<span class="c1"># fit the model first</span>
+<span class="n">br</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">shap_df</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+<span class="c1"># Shap Analysis</span>
+<span class="n">X500</span> <span class="o">=</span> <span class="n">shap</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">shap_df</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span> <span class="c1"># randomly sample 100 instances for use as the background distribution</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">X500</span><span class="p">))</span>
+<span class="n">explainer_ebm</span> <span class="o">=</span> <span class="n">shap</span><span class="o">.</span><span class="n">Explainer</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">predict</span><span class="p">,</span> <span class="n">X500</span><span class="p">)</span>  <span class="c1"># explain a random sample of the data</span>
+<span class="c1"># explainer = shap.Explainer(gp)</span>
+<span class="n">shap_values_ebm</span> <span class="o">=</span> <span class="n">explainer_ebm</span><span class="p">(</span><span class="n">X500</span><span class="p">)</span>
+
+<span class="n">shap</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">shap_values_ebm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/evaluation_EC_3_1.png" src="../_images/evaluation_EC_3_1.png" />
+</div>
+</div>
+<p>We see that the feature importances computed by the SHAP values are almost the same as our computed feature importances values using only the mean of the learned weight vectors, given scaled predictor variables.</p>
+<p>We can visualize a more informative representation of the feature importances using the summary plot method from SHAP. This plot gives us the order of feature importances, the distribution of shapely values, and an idea of the direction of influence each feature has on the outcome. Similar to the above bar plot, the feature importances are in descending order. From where the points are located horizontally, to the right or left of the SHAP value equals 0 (x-axis), we can determine whether that points holds positive or negative influence on the outcome. If the distribution of the shapely values widens, this means more shapely values lie in that range. Depending on whether the widening lies to the left or right of the <span class="math notranslate nohighlight">\(0\)</span> on the x-axis, we can determine whether the majority of samples hold a positive or negative influence on accretion. The colorbar on the right of plot indicates the specific feature’s importance value for that given sample.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shap</span><span class="o">.</span><span class="n">summary_plot</span><span class="p">(</span><span class="n">shap_values_ebm</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="n">shap_df</span><span class="p">,</span> <span class="n">feature_names</span><span class="o">=</span><span class="n">shap_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No data for colormapping provided via &#39;c&#39;. Parameters &#39;vmin&#39;, &#39;vmax&#39; will be ignored
+</pre></div>
+</div>
+<img alt="../_images/evaluation_EC_5_1.png" src="../_images/evaluation_EC_5_1.png" />
+</div>
+</div>
+<p>Examining the three most important features in the summary plot, we see that tidal amplitude has a net positive affect on the outcome as indicated by the red colorbar, while a substantial amount of the samples in the distribution are contributing negatively to accretion rate. Average flood depth also has a net positive effect on vertical accretion rate, while, again, much of the samples contribute negatively to vertical accretion rate. Opposite to tidal amplitude and average flood depth, soil porewater salinity contributes negatively to vertical accretion rate, while much of the samples actually contribute positively!</p>
+<p>Another way to interpret how certain features and samples are influencing our predicted vertical accretion rates is through a <em>heatmap</em> plot. The heatmap highlights how each sample influences certain predictions. On the upper x-axis (top of plot) we see how the outcome, <span class="math notranslate nohighlight">\(f(x)\)</span>, varies given different samples. For this particular plot, I have arranged the instances so that the expected vertical accretion values is decreasing from left to right. In our case, <span class="math notranslate nohighlight">\(f(x)\)</span> is vertical accretion rate. The red segments indicate a positive shapely value for the feature corresponding horizontally, indicating that the feature positively influences the expected vertical accretion rate. While the blue segments indicate negative shapely values, indicating that the corresponding feature negatively influences the expected vertical accretion rate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A summary of the sample scale predictions</span>
+<span class="n">shap</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">shap_values_ebm</span><span class="p">,</span> <span class="n">instance_order</span><span class="o">=</span><span class="n">shap_values_ebm</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/evaluation_EC_7_0.png" src="../_images/evaluation_EC_7_0.png" />
+</div>
+</div>
+<p>Through the heatmap, we see that tidal amplitude is largely the determinant variable for predicted accretion rates. Most of tidal amplitude’s positive shapely values lie to the left of the plot, where <span class="math notranslate nohighlight">\(f(x)\)</span> is positive, while most of the negative shapely values lie to the right where <span class="math notranslate nohighlight">\(f(x)\)</span> is negative.</p>
+</section>
+<section id="partial-dependence-plots-and-shap-dependence-plots">
+<h1>Partial Dependence Plots and SHAP Dependence Plots<a class="headerlink" href="#partial-dependence-plots-and-shap-dependence-plots" title="Permalink to this headline">#</a></h1>
+<p>Partial dependence plots are show the marginal effect of a feature and the resultant outcome variable given our model (Molnar 2019), helping us get an idea of the type of relationship the two variables have together. Given that we are looking at the partial dependence plots within a linear regression, we will expect to see only linear relationships in these plots between outcome and feature. The <span class="math notranslate nohighlight">\(E[f(x)]\)</span> is the mean of the outcome we want to approximate, vertical accretion rate. While <span class="math notranslate nohighlight">\(E[&quot;variable-name&quot;]\)</span> is the mean of the distribution of the variable represented in the plot.</p>
+<p>The SHAP dependence plots are similar, but slightly different to the partial dependence plots. Rather than the expected outcome on the y-axis, the shapely value is represented. While the partial dependence plot will roughly approximate the trends of the SHAP dependence plots. We also color the SHAP dependence plots by the magnitude of a related variable to the variable shown on the x-axis to understand interactions between variables. Red indicates higher value of the interacting variable, while bluw represents a lower value of the interacting variable.</p>
+<p>Let us examine the partial dependence plots for the 3 main contributors to accretion.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shap</span><span class="o">.</span><span class="n">partial_dependence_plot</span><span class="p">(</span>
+    <span class="s1">&#39;Standardized Tidal Amplitude&#39;</span><span class="p">,</span> <span class="n">br</span><span class="o">.</span><span class="n">predict</span><span class="p">,</span> <span class="n">X500</span><span class="p">,</span> <span class="n">ice</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">model_expected_value</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">feature_expected_value</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="c1"># Lets also check out the dependence plot</span>
+<span class="n">shap</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">shap_values_ebm</span><span class="p">[:,</span> <span class="s2">&quot;Standardized Tidal Amplitude&quot;</span><span class="p">],</span>
+                   <span class="n">color</span><span class="o">=</span><span class="n">shap_values_ebm</span><span class="p">[:,</span><span class="s2">&quot;Standardized 90th Percentile Flood Depth&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/evaluation_EC_10_0.png" src="../_images/evaluation_EC_10_0.png" />
+<img alt="../_images/evaluation_EC_10_1.png" src="../_images/evaluation_EC_10_1.png" />
+</div>
+</div>
+<p>Tidal amplitude has a clear positive relationship with the expected vertical accretion outcome as depicted by the partial dependence plot. The SHAP dependence plots displays a similar story, while the samples are colored by the normalized average flood depth value. However, there is no clear relationship between certain average flood depth values and increasing or decreasing expected outcomes.</p>
+<p>Next we are going to investigate the average flood depth, the second most important variable in our BLR model. But, we must also take a lot at the 90th percentile of the flood depth along with the average flood depth because the two are inherently intertwined. As flood depth increases, we expect the 90th percentile of the flood depth to increase as well. The below scatter plot reinforces this notion.</p>
+<p>We can vaguely see the different signatures of the influence of the 90th percentile flood depth at varying tidal amplitudes in the above scatter plot. For the same 90th percentile flood depth of, for example 40 cm, there is significantly less vertical accretion at a tidal amplitude of 0 cm versus at a tidal amplitude of 25 cm. This is what our model is picking up as shown by the SHAP dependence plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let us look at the partial dependence plot for Avgerage flood depth</span>
+<span class="n">shap</span><span class="o">.</span><span class="n">partial_dependence_plot</span><span class="p">(</span>
+    <span class="s2">&quot;Standardized 90th Percentile Flood Depth&quot;</span><span class="p">,</span> <span class="n">br</span><span class="o">.</span><span class="n">predict</span><span class="p">,</span> <span class="n">X500</span><span class="p">,</span> <span class="n">ice</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">model_expected_value</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">feature_expected_value</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="c1"># Lets also check out the SHAP dependence plot for average flood depth</span>
+<span class="n">shap</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">shap_values_ebm</span><span class="p">[:,</span> <span class="s2">&quot;Standardized 90th Percentile Flood Depth&quot;</span><span class="p">],</span>
+                   <span class="n">color</span><span class="o">=</span><span class="n">shap_values_ebm</span><span class="p">[:,</span><span class="s2">&quot;Standardized Tidal Amplitude&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/evaluation_EC_13_0.png" src="../_images/evaluation_EC_13_0.png" />
+<img alt="../_images/evaluation_EC_13_1.png" src="../_images/evaluation_EC_13_1.png" />
+</div>
+</div>
+</section>
+<section id="shap-analysis-for-gaussian-process-regression">
+<h1>SHAP Analysis for Gaussian Process Regression<a class="headerlink" href="#shap-analysis-for-gaussian-process-regression" title="Permalink to this headline">#</a></h1>
+<p>To visualize the nonlinear dynamics captured by the Gaussian Process Regression, we will implement the same SHAP analysis as we did for the Bayesian Linear Regression. Notice that the form kernel function will largely dictate the type of functions that will be represented between the features and vertical accretion rate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fit the model first</span>
+<span class="n">gp</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">shap_df</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+<span class="c1"># Shap Analysis</span>
+<span class="n">X500</span> <span class="o">=</span> <span class="n">shap</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">shap_df</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span> <span class="c1"># randomly sample 100 instances for use as the background distribution</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">X500</span><span class="p">))</span>
+<span class="n">explainer_ebm</span> <span class="o">=</span> <span class="n">shap</span><span class="o">.</span><span class="n">Explainer</span><span class="p">(</span><span class="n">gp</span><span class="o">.</span><span class="n">predict</span><span class="p">,</span> <span class="n">X500</span><span class="p">)</span>  <span class="c1"># explain a random sample of the data</span>
+<span class="c1"># explainer = shap.Explainer(gp)</span>
+<span class="n">shap_values_ebm</span> <span class="o">=</span> <span class="n">explainer_ebm</span><span class="p">(</span><span class="n">shap_df</span><span class="p">)</span>
+
+<span class="n">shap</span><span class="o">.</span><span class="n">summary_plot</span><span class="p">(</span><span class="n">shap_values_ebm</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="n">shap_df</span><span class="p">,</span> <span class="n">feature_names</span><span class="o">=</span><span class="n">shap_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No data for colormapping provided via &#39;c&#39;. Parameters &#39;vmin&#39;, &#39;vmax&#39; will be ignored
+</pre></div>
+</div>
+<img alt="../_images/evaluation_EC_15_2.png" src="../_images/evaluation_EC_15_2.png" />
+</div>
+</div>
+<p>While average flood depth and tidal amplitude are still identified as the most important variables, the importance of the other variables changes slightly in the GPR model. Let’s look at the heatmap summary plot to get a better idea of how these variables influence different accretion rates.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A summary of the sample scale predictions</span>
+<span class="n">shap</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">shap_values_ebm</span><span class="p">,</span> <span class="n">instance_order</span><span class="o">=</span><span class="n">shap_values_ebm</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/evaluation_EC_17_0.png" src="../_images/evaluation_EC_17_0.png" />
+</div>
+</div>
+<p>Similar trends as in the BLR are picked up, except there is definitely less of a reliance on tidal amplitude for making vertical accretion rate predictions. We also see that the higher estimates of vertical accretion rates are largely positively influenced by tidal amplitude, NDVI, and the 90th percentile of flood depth. While the lowest estimates of vertical accretion are largely negatively influenced by tidal amplitude and NDVI, but rely little upon the 90th percentile of flood depth.</p>
+<p>Let’s again look at some partial dependence and SHAP dependence plots to see how the GPR differs from the BLR.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the partial dependence of the tidal amplitude within the GPR</span>
+<span class="n">shap</span><span class="o">.</span><span class="n">partial_dependence_plot</span><span class="p">(</span>
+    <span class="s1">&#39;Standardized Tidal Amplitude&#39;</span><span class="p">,</span> <span class="n">gp</span><span class="o">.</span><span class="n">predict</span><span class="p">,</span> <span class="n">X500</span><span class="p">,</span> <span class="n">ice</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">model_expected_value</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">feature_expected_value</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="c1"># Lets also check out the dependence plot of tidal amplitude within the GPR, colored by average flood depth</span>
+<span class="n">shap</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">shap_values_ebm</span><span class="p">[:,</span> <span class="s2">&quot;Standardized Tidal Amplitude&quot;</span><span class="p">],</span>
+                   <span class="n">color</span><span class="o">=</span><span class="n">shap_values_ebm</span><span class="p">[:,</span><span class="s2">&quot;Standardized 90th Percentile Flood Depth&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/evaluation_EC_19_0.png" src="../_images/evaluation_EC_19_0.png" />
+<img alt="../_images/evaluation_EC_19_1.png" src="../_images/evaluation_EC_19_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;90th Percentile Flood Depth (cm)&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Tidal Amplitude (cm)&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Accretion Rate (mm/yr)&#39;</span><span class="p">,</span>
+               <span class="n">size</span><span class="o">=</span><span class="s1">&#39;Accretion Rate (mm/yr)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/evaluation_EC_20_0.png" src="../_images/evaluation_EC_20_0.png" />
+</div>
+</div>
+<p>Nice! We get a similar trend as in the partial dependence plot for the BLR, but, this time, there is a little curvature to the partial dependence function. This indicates that the trend between tidal amplitude and accretion is truly captured with a linear relationship. We see a slight nonlinearity to this form, but its significance might be largely minimal.</p>
+<p>The zero in the x-axis indicates that mean of the tidal amplitude data distribution, while each unit is in standard deviations. We notice that across the mean of the tidal amplitude data, standard deviation equal 0.0, flood depths have a opposite association with tidal amplitude and accretion rate. Where tidal amplitudes are below the mean, flood depth decreases with increasing tidal amplitude, while the expected accretion rate increases. Where tidal amplitudes are above the mean, flood depths increase with increasing tidal amplitude, while the expected accretion rate also increases.</p>
+<p>With tidal amplitude increasing with flood depth above the mean tidal amplitude, we may expect this to be due to a greater influence of oceanic flood waters on flooding. To test qualitatively test this, we can look at the relationship between tidal amplitude, flood depth, and soil porewater salinity, assuming that an increase in the soil porewater salinity is associated with a more saline flooding regime.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Histogram to see splits in salinity distributions across marsh types</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Soil Porewater Salinity (ppt)&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Community&#39;</span><span class="p">,</span> <span class="n">multiple</span><span class="o">=</span><span class="s1">&#39;stack&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1"># scatter</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Soil Porewater Salinity (ppt)&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;90th Percentile Flood Depth (cm)&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Tidal Amplitude (cm)&#39;</span><span class="p">,</span>
+               <span class="n">size</span><span class="o">=</span><span class="s1">&#39;Tidal Amplitude (cm)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/evaluation_EC_22_0.png" src="../_images/evaluation_EC_22_0.png" />
+<img alt="../_images/evaluation_EC_22_1.png" src="../_images/evaluation_EC_22_1.png" />
+</div>
+</div>
+<p>The stacked histogram shows us that the distribution of salinity values in the saline marsh sites deviate from the fresher water sites around a value of ~10 ppt. By examining the subsequent scatter plot, we see that above salinity values of ~10 ppt, in the saline marshes, there is a positive trend between salinity and flood depth. While, for salinity values less than ~10 ppt, there is no relationship to a weak logarithmic relationship between flood depth and salinity. This could be potentially highlighting the difference in flooding regimes between the saline sites and the fresher water sites. Great! We have justed used a post-training machine learning explanation technique to find a relationship that we may not have noticed before!</p>
+<p>Now let’s take a look at both the average flood depth and the 90th percentile of the flood depth</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># partial dependence plot for 90th percentile flood depth</span>
+<span class="n">shap</span><span class="o">.</span><span class="n">partial_dependence_plot</span><span class="p">(</span>
+    <span class="s1">&#39;Standardized 90th Percentile Flood Depth&#39;</span><span class="p">,</span> <span class="n">gp</span><span class="o">.</span><span class="n">predict</span><span class="p">,</span> <span class="n">X500</span><span class="p">,</span> <span class="n">ice</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">model_expected_value</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">feature_expected_value</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="c1"># Now lets look at the dependence plot with interactions</span>
+<span class="n">shap</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">shap_values_ebm</span><span class="p">[:,</span> <span class="s2">&quot;Standardized 90th Percentile Flood Depth&quot;</span><span class="p">],</span> 
+                   <span class="n">color</span><span class="o">=</span><span class="n">shap_values_ebm</span><span class="p">[:,</span><span class="s2">&quot;Standardized Tidal Amplitude&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/evaluation_EC_24_0.png" src="../_images/evaluation_EC_24_0.png" />
+<img alt="../_images/evaluation_EC_24_1.png" src="../_images/evaluation_EC_24_1.png" />
+</div>
+</div>
+<p>Again, we see the varying influences of the 90th percentile flood depth at different tidal amplitudes. A clear split in the SHAP dependence functions is present between low and high tidal amplitude values.</p>
+<p>Using machine learning techniques not only provides opportunities for increasing the accuracy of forecasts, but also augments our ability to better understand the phenomena we are trying to model through explainable AI. The workflow promoted in this tutorial can be generalized to any earth science application with a small dataset and the goal of obtaining a process based understanding of the influences of the features on the outcome variable.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="training_EC.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Bayesian Ridge Regression Implementation</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="workflow.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Workflow Management / Cloud Computing</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By eScience Institute, University of Washington<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

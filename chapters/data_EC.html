@@ -1,0 +1,1332 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Brief Data Descriptions &#8212; Use Case Template</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="development_EC.html" />
+    <link rel="prev" title="Interpretable Models" href="methods_EC.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/GeoSMART_logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Use Case Template</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  About
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://geo-smart.github.io/index.html">
+   Geosmart Website
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://foundations.projectpythia.org/landing-page.html">
+   Project Pythia Foundations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   About Use Case Library
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter One
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="motivation_EC.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter Two
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="methods_EC.html">
+   Interpretable Models
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter Three
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Brief Data Descriptions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter Five
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="training_EC.html">
+   Bayesian Ridge Regression Implementation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter Six
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="evaluation_EC.html">
+   SHAP Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter Seven
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="workflow.html">
+   Workflow Management / Cloud Computing
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter Eight
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Reproducibility_EC.html">
+   Reproducibility
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter Nine
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="conclusion_EC.html">
+   Conclusion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter Ten (optional)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="todo.html">
+   Try something on your own
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter Eleven (optional)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="questions.html">
+   Open questions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter Twelve (optional)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="troubleshooting.html">
+   Trouble Shooting
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Chapter Thirteen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="example.html">
+   Sample Jupyter Notebook
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../reference/glossary.html">
+   Glossaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../reference/bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/geo-smart/use_case_template/main?urlpath=lab/tree/book/chapters/data_EC.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/geo-smart/use_case_template"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/geo-smart/use_case_template/issues/new?title=Issue%20on%20page%20%2Fchapters/data_EC.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/geo-smart/use_case_template/edit/main/book/chapters/data_EC.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/chapters/data_EC.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Brief Data Descriptions
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variable-descriptions">
+   Variable Descriptions
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Brief Data Descriptions</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Brief Data Descriptions
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variable-descriptions">
+   Variable Descriptions
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all packages</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="kn">import</span> <span class="nn">textwrap</span> 
+
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span> 
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
+
+<span class="kn">import</span> <span class="nn">shap</span> 
+
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span> 
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span> 
+
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">KFold</span><span class="p">,</span> <span class="n">cross_validate</span><span class="p">,</span> <span class="n">cross_val_predict</span><span class="p">,</span> <span class="n">RepeatedKFold</span><span class="p">,</span> <span class="n">cross_val_score</span><span class="p">,</span> <span class="n">GridSearchCV</span> 
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span><span class="p">,</span> <span class="n">mean_absolute_error</span> 
+
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/geo-smart/XAI_coastalLA/main/minimal_preprocessing_dataset.csv&quot;</span> <span class="c1"># Make sure the url is the raw version of the file on GitHub</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of Columns: &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Columns:  107
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>Accretion Measurement 1 (mm)</th>
+      <th>Accretion Measurement 2 (mm)</th>
+      <th>Accretion Measurement 3 (mm)</th>
+      <th>Accretion Measurement 4 (mm)</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Year (yyyy)</th>
+      <th>Month (mm)</th>
+      <th>Average Accretion (mm)</th>
+      <th>...</th>
+      <th>percent_waterlevel_complete</th>
+      <th>Unnamed: 6</th>
+      <th>Surface Elevation Change Rate (cm/y)</th>
+      <th>Flood Freq (Floods/yr)</th>
+      <th>Avg. Flood Depth when Flooded (ft)</th>
+      <th>90th Percentile Flood Depth when Flooded (ft)</th>
+      <th>10th Percentile Flood Depth when Flooded (ft)</th>
+      <th>Std. Deviation Flood Depth when Flooded</th>
+      <th>Acc_rate_fullterm (cm/y)</th>
+      <th>Average_Marsh_Elevation (ft. NAVD88)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CRMS0002</td>
+      <td>32.545</td>
+      <td>34.0</td>
+      <td>34.0</td>
+      <td>30.0</td>
+      <td>30.100356</td>
+      <td>-89.791784</td>
+      <td>2016.0</td>
+      <td>4.0</td>
+      <td>28.75</td>
+      <td>...</td>
+      <td>97.739726</td>
+      <td>NaN</td>
+      <td>0.49</td>
+      <td>163.104824</td>
+      <td>0.442805</td>
+      <td>1.104</td>
+      <td>0.00</td>
+      <td>0.506806</td>
+      <td>1.05</td>
+      <td>0.351500</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CRMS0003</td>
+      <td>24.500</td>
+      <td>23.0</td>
+      <td>24.0</td>
+      <td>11.0</td>
+      <td>30.099396</td>
+      <td>-89.252697</td>
+      <td>2015.0</td>
+      <td>4.0</td>
+      <td>11.25</td>
+      <td>...</td>
+      <td>99.965753</td>
+      <td>NaN</td>
+      <td>0.55</td>
+      <td>243.955101</td>
+      <td>0.140492</td>
+      <td>0.531</td>
+      <td>0.00</td>
+      <td>0.333084</td>
+      <td>1.26</td>
+      <td>0.853500</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>CRMS0006</td>
+      <td>28.000</td>
+      <td>30.0</td>
+      <td>27.0</td>
+      <td>20.5</td>
+      <td>30.263548</td>
+      <td>-89.982233</td>
+      <td>2016.0</td>
+      <td>4.0</td>
+      <td>18.50</td>
+      <td>...</td>
+      <td>98.390411</td>
+      <td>NaN</td>
+      <td>0.41</td>
+      <td>57.171053</td>
+      <td>0.334836</td>
+      <td>0.898</td>
+      <td>0.00</td>
+      <td>0.445684</td>
+      <td>1.18</td>
+      <td>0.522500</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>CRMS0008</td>
+      <td>0.000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>30.228348</td>
+      <td>-90.685225</td>
+      <td>2016.0</td>
+      <td>5.0</td>
+      <td>0.00</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+      <td>0.42</td>
+      <td>69.701166</td>
+      <td>0.729878</td>
+      <td>1.270</td>
+      <td>0.27</td>
+      <td>0.514597</td>
+      <td>0.75</td>
+      <td>0.441111</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>CRMS0030</td>
+      <td>44.000</td>
+      <td>48.0</td>
+      <td>49.0</td>
+      <td>37.5</td>
+      <td>30.303906</td>
+      <td>-90.325364</td>
+      <td>2016.0</td>
+      <td>4.0</td>
+      <td>37.75</td>
+      <td>...</td>
+      <td>96.529680</td>
+      <td>NaN</td>
+      <td>0.60</td>
+      <td>142.737073</td>
+      <td>0.271160</td>
+      <td>0.850</td>
+      <td>0.00</td>
+      <td>0.446133</td>
+      <td>1.73</td>
+      <td>0.661000</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 107 columns</p>
+</div></div></div>
+</div>
+<p>Alright, so we can see there are many variables included in this minimally preprocessed dataframe. It is almost certain that any dataset we work with will have many NaN values spread throughout various columns. If there are NaNs in some of the variable columns, then we cannot use that CRMS stations in our feature selection analysis. Therefore, let us first remove any columns that have excessive amounts of of NaNs to maximize the number of CRMS stations we can use.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">thresh</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of Columns&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Unnamed: 0&#39; &#39;Accretion Measurement 1 (mm)&#39;
+ &#39;Accretion Measurement 2 (mm)&#39; &#39;Accretion Measurement 3 (mm)&#39;
+ &#39;Accretion Measurement 4 (mm)&#39; &#39;Latitude&#39; &#39;Longitude&#39; &#39;Year (yyyy)&#39;
+ &#39;Month (mm)&#39; &#39;Average Accretion (mm)&#39; &#39;Delta time (days)&#39;
+ &#39;Delta Time (decimal_years)&#39; &#39;Accretion Rate (mm/yr)&#39; &#39;Basins&#39;
+ &#39;Wet Soil pH (pH units)&#39; &#39;Dry Soil pH (pH units)&#39;
+ &#39;Soil Specific Conductance (uS/cm)&#39; &#39;Soil Salinity (ppt)&#39;
+ &#39;Soil Moisture Content (%)&#39; &#39;Bulk Density (g/cm3)&#39; &#39;Organic Matter (%)&#39;
+ &#39;Wet Volume (cm3)&#39; &#39;Dry Volume (cm3)&#39; &#39;Organic Density (g/cm3)&#39;
+ &#39;Staff Gauge (ft)&#39; &#39;Measurement Depth (ft)&#39;
+ &#39;Soil Porewater Temperature (°C)&#39;
+ &#39;Soil Porewater Specific Conductance (uS/cm)&#39;
+ &#39;Soil Porewater Salinity (ppt)&#39; &#39;Plot Size (m2)&#39; &#39;% Cover Shrub&#39;
+ &#39;% Cover Carpet&#39; &#39;Average Height Dominant (cm)&#39;
+ &#39;Average Height Shrub (cm)&#39; &#39;Average Height Herb (cm)&#39;
+ &#39;Average Height Carpet (cm)&#39; &#39;Community&#39; &#39;Direction (Collar Number)&#39;
+ &#39;Direction (Compass Degrees)&#39; &#39;Pin Number&#39; &#39;Observed Pin Height (mm)&#39;
+ &#39;Verified Pin Height (mm)&#39; &#39;distance_to_river_m&#39; &#39;width_mean&#39;
+ &#39;Distance_to_Water_m&#39; &#39;NDVI&#39; &#39;tss_med&#39; &#39;windspeed&#39; &#39;Land_Lost_m2&#39;
+ &#39;Tide_Amp (ft)&#39; &#39;avg_percentflooded (%)&#39; &#39;Year&#39;
+ &#39;percent_waterlevel_complete&#39; &#39;Surface Elevation Change Rate (cm/y)&#39;
+ &#39;Flood Freq (Floods/yr)&#39; &#39;Avg. Flood Depth when Flooded (ft)&#39;
+ &#39;90th Percentile Flood Depth when Flooded (ft)&#39;
+ &#39;10th Percentile Flood Depth when Flooded (ft)&#39;
+ &#39;Std. Deviation Flood Depth when Flooded &#39; &#39;Acc_rate_fullterm (cm/y)&#39;
+ &#39;Average_Marsh_Elevation (ft. NAVD88)&#39;]
+Number of Columns 61
+</pre></div>
+</div>
+</div>
+</div>
+<p>Great, now we cut down our total number of columns from 107 to 61. Now, we want to manually identify which variables can be directly related to either a physical transport mechanism or a biological sedimentation process. Then we drop any variables that are uninformative.</p>
+<p>Pulling from some domain knowledge, we can exclude the variables: Latitude, Longitude, Month (mm), Year (yyyy), Delta time (days),  Delta Time (decimal_years), Basins, Wet Soil pH (pH units), Dry Soil pH (pH units), Wet Volume (cm3), Dry Volume (cm3), Staff Gauge (ft), Measurement Depth (ft), Soil Porewater Temperature (°C), Plot Size (m2), % Cover Shrub, % Cover Carpet, Average Height Shrub (cm), Average Height Herb (cm), Average Height Carpet (cm), Direction (Collar Number), Direction (Compass Degrees), Pin Number, Observed Pin Height (mm), Verified Pin Height (mm), width_mean, Year, percent_waterlevel_complete, Surface Elevation Change Rate (cm/y), and Average_Marsh_Elevation (ft. NAVD88).</p>
+<p>Many of these variables are either giving geographic descriptions, such as longitude and latitude, description of sampling site, such as Pin Number and Measurement Depth (ft), or are intrinsically related to the accretion rate, the outcome we want to predict, such as Observed Pin Height (mm) and Surface Elevation Change Rate (cm/y).</p>
+<p>We have also decided we want to predict the Accretion Rate (mm/yr) variable and, thus, will drop any other variable recording accretion. These include Acc_rate_fullterm (cm/y), Accretion Measurement 1 (mm), Accretion Measurement 2 (mm), Accretion Measurement 3 (mm), Accretion Measurement 4 (mm), and Average Accretion (mm).</p>
+<p>Finally, we want to get rid of any variables that are describing the properties of the deposited soil. Since, these do not really relate to an environmental process contributing to sedimentation, but rather simply describe what has been deposited. We also want to drop redundant variables such as the some of the salinity variables, soil salinity versus soil porewater salinity versus soil conductance, only keeping the soil porewater salinity variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Year (yyyy)&#39;</span><span class="p">,</span> <span class="s1">&#39;Acc_rate_fullterm (cm/y)&#39;</span><span class="p">,</span> <span class="s1">&#39;Accretion Measurement 1 (mm)&#39;</span><span class="p">,</span> 
+             <span class="s1">&#39;Accretion Measurement 2 (mm)&#39;</span><span class="p">,</span> <span class="s1">&#39;Accretion Measurement 3 (mm)&#39;</span><span class="p">,</span><span class="s1">&#39;Accretion Measurement 4 (mm)&#39;</span><span class="p">,</span><span class="s1">&#39;Month (mm)&#39;</span><span class="p">,</span> 
+             <span class="s1">&#39;Average Accretion (mm)&#39;</span><span class="p">,</span> <span class="s1">&#39;Soil Specific Conductance (uS/cm)&#39;</span><span class="p">,</span> <span class="s1">&#39;Latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;Longitude&#39;</span><span class="p">,</span> <span class="s1">&#39;Basins&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;Delta time (days)&#39;</span><span class="p">,</span> <span class="s1">&#39;Wet Volume (cm3)&#39;</span><span class="p">,</span><span class="s1">&#39;Delta Time (decimal_years)&#39;</span><span class="p">,</span> <span class="s1">&#39;Wet Soil pH (pH units)&#39;</span><span class="p">,</span> 
+             <span class="s1">&#39;Dry Soil pH (pH units)&#39;</span><span class="p">,</span> <span class="s1">&#39;Dry Volume (cm3)&#39;</span><span class="p">,</span><span class="s1">&#39;Measurement Depth (ft)&#39;</span><span class="p">,</span> <span class="s1">&#39;Plot Size (m2)&#39;</span><span class="p">,</span> 
+             <span class="s1">&#39;% Cover Shrub&#39;</span><span class="p">,</span> <span class="s1">&#39;% Cover Carpet&#39;</span><span class="p">,</span> <span class="s1">&#39;Direction (Collar Number)&#39;</span><span class="p">,</span><span class="s1">&#39;Direction (Compass Degrees)&#39;</span><span class="p">,</span> 
+             <span class="s1">&#39;Pin Number&#39;</span><span class="p">,</span> <span class="s1">&#39;Observed Pin Height (mm)&#39;</span><span class="p">,</span> <span class="s1">&#39;Verified Pin Height (mm)&#39;</span><span class="p">,</span> <span class="s1">&#39;percent_waterlevel_complete&#39;</span><span class="p">,</span> 
+             <span class="s1">&#39;Average Height Shrub (cm)&#39;</span><span class="p">,</span> <span class="s1">&#39;Average Height Carpet (cm)&#39;</span><span class="p">,</span> <span class="s1">&#39;Average_Marsh_Elevation (ft. NAVD88)&#39;</span><span class="p">,</span> 
+             <span class="s1">&#39;Surface Elevation Change Rate (cm/y)&#39;</span><span class="p">,</span> <span class="s1">&#39;Soil Porewater Temperature (°C)&#39;</span><span class="p">,</span> <span class="s1">&#39;Soil Moisture Content (%)&#39;</span><span class="p">,</span> 
+             <span class="s1">&#39;Organic Density (g/cm3)&#39;</span><span class="p">,</span> <span class="s1">&#39;Staff Gauge (ft)&#39;</span><span class="p">,</span> <span class="s1">&#39;Organic Matter (%)&#39;</span><span class="p">,</span> <span class="s1">&#39;Bulk Density (g/cm3)&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;Soil Porewater Specific Conductance (uS/cm)&#39;</span><span class="p">,</span> <span class="s1">&#39;Soil Salinity (ppt)&#39;</span><span class="p">,</span> <span class="s1">&#39;width_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;Average Height Herb (cm)&#39;</span>
+             <span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+            <span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of Columns: &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Unnamed: 0&#39; &#39;Accretion Rate (mm/yr)&#39; &#39;Soil Porewater Salinity (ppt)&#39;
+ &#39;Average Height Dominant (cm)&#39; &#39;Community&#39; &#39;distance_to_river_m&#39;
+ &#39;Distance_to_Water_m&#39; &#39;NDVI&#39; &#39;tss_med&#39; &#39;windspeed&#39; &#39;Land_Lost_m2&#39;
+ &#39;Tide_Amp (ft)&#39; &#39;avg_percentflooded (%)&#39; &#39;Flood Freq (Floods/yr)&#39;
+ &#39;Avg. Flood Depth when Flooded (ft)&#39;
+ &#39;90th Percentile Flood Depth when Flooded (ft)&#39;
+ &#39;10th Percentile Flood Depth when Flooded (ft)&#39;
+ &#39;Std. Deviation Flood Depth when Flooded &#39;]
+Number of Columns:  18
+</pre></div>
+</div>
+</div>
+</div>
+<p>Great! Now we have the 15 most logical variables to attempt to model vertical accretion rates from. However, we still need to do some more preproccessing before we use this data in an ML workflow. Primarily, due to an assumption of normality of the predictors for both a Gaussian Process Regression model and a linear regression model, we need to transform any variables that clearly do not display normal distributions. Let’s first visualize all of the data using seaborn’s pairplot method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f7fc95ea580&gt;
+</pre></div>
+</div>
+<img alt="../_images/data_EC_7_1.png" src="../_images/data_EC_7_1.png" />
+</div>
+</div>
+<p>The only variables that standout as clearly with logarithmic distributions are the distance from water variable and the distance from rivers variable. While, other variables such as 10th Percentile Flood Depth when Flooded (ft), avg_percentflooded (%), and Tide_Amp (ft) have an excessive amount of zero values, conducting a logarithm transform will not correct these distributions in any meaningful way.</p>
+<p>A logarithmic transformation is simply taking the natural logarithm, or any logarithm, of the values of a variable. Since the logarithm of zero is undefined, we will use a list comprehension to apply the log transform.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;log_distance_to_water_m&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="k">if</span> <span class="n">val</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Distance_to_Water_m&#39;</span><span class="p">]]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;log_distance_to_river_m&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="k">if</span> <span class="n">val</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;distance_to_river_m&#39;</span><span class="p">]]</span>
+<span class="c1"># Now drop the variables with the logarithmic distribution</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Distance_to_Water_m&#39;</span><span class="p">,</span> <span class="s1">&#39;distance_to_river_m&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Something else we may want to do is convert our units into SI units rather than imperial units. It is not a requirement, but might provide some more clarity when interpreting.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># scaling to SI units for formality</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Distance to River (km)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;log_distance_to_river_m&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">1000</span>  <span class="c1"># convert to km</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Distance to Water (km)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;log_distance_to_water_m&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">1000</span>  <span class="c1"># convert to km</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Land Lost (km2)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Land_Lost_m2&#39;</span><span class="p">]</span><span class="o">*</span><span class="mf">0.000001</span>  <span class="c1"># convert to km2</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tidal Amplitude (cm)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tide_Amp (ft)&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">30.48</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;90th Percentile Flood Depth (cm)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;90th Percentile Flood Depth when Flooded (ft)&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">30.48</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;10th Percentile Flood Depth (cm)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;10th Percentile Flood Depth when Flooded (ft)&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">30.48</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Avg. Flood Depth (cm)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Avg. Flood Depth when Flooded (ft)&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">30.48</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Std. Deviation Flood Depth (cm)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Std. Deviation Flood Depth when Flooded &#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">30.48</span>  <span class="c1"># notice typo in name</span>
+
+<span class="c1"># Drop remade variables</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;log_distance_to_river_m&#39;</span><span class="p">,</span><span class="s1">&#39;log_distance_to_water_m&#39;</span><span class="p">,</span><span class="s1">&#39;Land_Lost_m2&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Tide_Amp (ft)&#39;</span><span class="p">,</span> <span class="s1">&#39;90th Percentile Flood Depth when Flooded (ft)&#39;</span><span class="p">,</span> 
+              <span class="s1">&#39;10th Percentile Flood Depth when Flooded (ft)&#39;</span><span class="p">,</span> <span class="s1">&#39;Avg. Flood Depth when Flooded (ft)&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;Std. Deviation Flood Depth when Flooded &#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># rename variables to nicer names</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;tss_med&#39;</span><span class="p">:</span> <span class="s1">&#39;TSS (mg/l)&#39;</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Unnamed: 0&#39; &#39;Accretion Rate (mm/yr)&#39; &#39;Soil Porewater Salinity (ppt)&#39;
+ &#39;Average Height Dominant (cm)&#39; &#39;Community&#39; &#39;NDVI&#39; &#39;TSS (mg/l)&#39;
+ &#39;windspeed&#39; &#39;avg_percentflooded (%)&#39; &#39;Flood Freq (Floods/yr)&#39;
+ &#39;Distance to River (km)&#39; &#39;Distance to Water (km)&#39; &#39;Land Lost (km2)&#39;
+ &#39;Tidal Amplitude (cm)&#39; &#39;90th Percentile Flood Depth (cm)&#39;
+ &#39;10th Percentile Flood Depth (cm)&#39; &#39;Avg. Flood Depth (cm)&#39;
+ &#39;Std. Deviation Flood Depth (cm)&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get rid of swamp sites because these sites are underwater basically...</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of Rows with Swamp Stations: &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Community&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Swamp&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of Rows with no Swamp Stations: &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Check unique columns in community to make sure swamp stations are dropped: &quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Community&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Rows with Swamp Stations:  401
+Number of Rows with no Swamp Stations:  342
+Check unique columns in community to make sure swamp stations are dropped:  [&#39;Brackish&#39; &#39;Saline&#39; &#39;Intermediate&#39; &#39;Freshwater&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Great! Now the last thing we need to do is remove outliers. Outlier removal is an art in itself and there are many different techniques to choose from. For our use case, we want to remove CRMS stations with abnormally high accretion rates. This is because as accretion rates increase, we suppose that more stochastic processes begin to dominant the modes of sediment deposition. Therefore, we remove CRMS stations with accretion rates that are higher than 1.5 times the interquartile range of the distribution of accretion rates.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># outlier removal: by the accretion rate value --&gt; interquartile range</span>
+<span class="k">def</span> <span class="nf">max_interquartile_outlierrm</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+    <span class="n">Q1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">target</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+    <span class="n">Q3</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">target</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+    <span class="n">IQR</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">-</span> <span class="n">Q1</span>
+
+    <span class="n">filtered_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">target</span><span class="p">]</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">Q3</span> <span class="o">+</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span><span class="p">))]</span>
+    <span class="k">return</span> <span class="n">filtered_df</span>
+
+<span class="c1"># check the new number of CRMS stations</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">max_interquartile_outlierrm</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;Accretion Rate (mm/yr)&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number of CRMS stations post outlier removal: &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The number of CRMS stations post outlier removal:  319
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now lets drop any NaNs that persist in our dataset</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Final number of CRMS stations: &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Final number of CRMS stations:  266
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id='_DataDescriptions'></a></p>
+<section id="brief-data-descriptions">
+<h1>Brief Data Descriptions<a class="headerlink" href="#brief-data-descriptions" title="Permalink to this headline">#</a></h1>
+<p>Getting to know our data is crucial. This way we know what processes we are incorporating into our model, which we are excluding, and how many samples we have to capture the full relationship of vertical accretion.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># lets know how many variables and how many samples we have to work with</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of samples in dataset: &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of features in the dataset: &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of samples in dataset:  266
+Number of features in the dataset:  18
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outcome</span> <span class="o">=</span> <span class="s1">&#39;Accretion Rate (mm/yr)&#39;</span>
+<span class="n">feature_ls</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># make a list including all the variables; </span>
+                                           <span class="c1"># excluding the categorical Site and Maarsh community variables</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">feature_ls</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Accretion Rate (mm/yr)&#39;, &#39;Soil Porewater Salinity (ppt)&#39;, &#39;Average Height Dominant (cm)&#39;, &#39;Community&#39;, &#39;NDVI&#39;, &#39;TSS (mg/l)&#39;, &#39;windspeed&#39;, &#39;avg_percentflooded (%)&#39;, &#39;Flood Freq (Floods/yr)&#39;, &#39;Distance to River (km)&#39;, &#39;Distance to Water (km)&#39;, &#39;Land Lost (km2)&#39;, &#39;Tidal Amplitude (cm)&#39;, &#39;90th Percentile Flood Depth (cm)&#39;, &#39;10th Percentile Flood Depth (cm)&#39;, &#39;Avg. Flood Depth (cm)&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="variable-descriptions">
+<h1>Variable Descriptions<a class="headerlink" href="#variable-descriptions" title="Permalink to this headline">#</a></h1>
+<p>The remaining variables that will be used in the analysis are:</p>
+<ul class="simple">
+<li><p><strong>Accretion Rate (mm/yr)</strong>: The amount of sediment deposited above a datum. Recorded with a 6 to 18 month sampling interval.</p></li>
+<li><p><strong>Soil Porewater Salinity (ppt)</strong>: Measured from a syringe inserted into the soil. Recorded variably to annually.</p></li>
+<li><p><strong>Average Height Dominant (cm)</strong>: Survey measurement of the average height of the dominant vegetation species. Sampled annually.</p></li>
+<li><p><strong>NDVI</strong>: The Normalized Difference Vegetation Index which is an estimate of aboveground biomass from Landsat 7. Samples consisted of an 8 day averages only collected during the months of peak biomass, July-August.</p></li>
+<li><p><strong>TSS (mg/l)</strong>: Estimate of Total Suspended Sediment (TSS) from MODIS. With a 2-day sampling (recurrance) interval.</p></li>
+<li><p><strong>Windspeed</strong>: Reanalysis data from the Global Wind Atlas available from Google Earth Engine (GEE) (The Global Wind Atlas 3 2022).</p></li>
+<li><p><strong>Tidal Amplitude (cm)</strong>: The average daily difference between the highest recorded and lowest hourly water-level as recorded from an underwater sonde.</p></li>
+<li><p><strong>Average Time Flooded (%)</strong>: The percentage of time in which the water-level exceeds the elevation of the marsh. Calculated from hourly water-level measurements from an underwater sonde.</p></li>
+<li><p><strong>Flood Frequency (Floods/yr)</strong>: The number of times that the water-level exceeds the elevation of the marsh. Calculated from hourly water-level measurements from an underwater sonde.</p></li>
+<li><p><strong>Average Flood Depth (cm)</strong>: The average waterlevel when the water-level is higher than the marsh elevation. Calculated from hourly water-level measurements from an underwater sonde.</p></li>
+<li><p><strong>90th Percentile Flood Depth (cm)</strong>: The 90th percentile of the time series distribution of average flood depth. Calculated from hourly water-level measurements from an underwater sonde.</p></li>
+<li><p><strong>10th Percentile Flood Depth (cm)</strong>: The 10th percentile of the time series distribution of average flood depth. Calculated from hourly water-level measurements from an underwater sonde.</p></li>
+<li><p><strong>Std. Deviation Flood Depth (cm)</strong>: The standard deviation of the time series distribution of average flood depth. Calculated from hourly water-level measurements from an underwater sonde.</p></li>
+<li><p><strong>Log Distance to Water (km)</strong>: The log of the distance to the nearest water pixel (90% recurrence). As calcculated by the JRC Global Surface Water Dataset (Pekkel et al 2016).</p></li>
+<li><p><strong>Log Distance to River (km)</strong>: The log of the distance to the nearest Global River Width from Landsat (GRWL) dataset river vectors taken from GEE (Allen and Pavelsky 2018).</p></li>
+<li><p><strong>Community</strong>: Marsh Community (Freshwater, Intermediate, Brackish, Saline, Swamp) determined from surveys of                        vegetation and salinity gradients.</p></li>
+</ul>
+<p>Note that all of these variables spanned either the lifespan of a CRMS site which largely encapsulates 2007 to 2022 (Wagner and Haywood III 2022).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s visualize what we want to predict, &#39;Accretion Rate (mm/yr)&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">stat</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span> <span class="n">multiple</span><span class="o">=</span><span class="s2">&quot;stack&quot;</span><span class="p">,</span>
+             <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Accretion Rate (mm/yr)&quot;</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+             <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Community&quot;</span><span class="p">,</span>
+             <span class="n">element</span><span class="o">=</span><span class="s2">&quot;bars&quot;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Distribution of Accretion Rates&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Accretion Rate (mm/yr)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Count&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/data_EC_20_0.png" src="../_images/data_EC_20_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s define our target and design matrix for our ML job</span>
+<span class="n">target</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">,</span> <span class="s1">&#39;Accretion Rate (mm/yr)&#39;</span><span class="p">,</span> <span class="s1">&#39;Community&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s get a picture of the target variable, vertical accretion</span>
+<span class="n">target</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    266.000000
+mean      13.093916
+std        6.449721
+min        2.128280
+25%        8.226964
+50%       12.174938
+75%       16.227400
+max       32.589286
+Name: Accretion Rate (mm/yr), dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Some decriptive statistics to get a picture of the distributions</span>
+<span class="n">phi</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Soil Porewater Salinity (ppt)</th>
+      <th>Average Height Dominant (cm)</th>
+      <th>NDVI</th>
+      <th>TSS (mg/l)</th>
+      <th>windspeed</th>
+      <th>avg_percentflooded (%)</th>
+      <th>Flood Freq (Floods/yr)</th>
+      <th>Distance to River (km)</th>
+      <th>Distance to Water (km)</th>
+      <th>Land Lost (km2)</th>
+      <th>Tidal Amplitude (cm)</th>
+      <th>90th Percentile Flood Depth (cm)</th>
+      <th>10th Percentile Flood Depth (cm)</th>
+      <th>Avg. Flood Depth (cm)</th>
+      <th>Std. Deviation Flood Depth (cm)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>266.000000</td>
+      <td>266.000000</td>
+      <td>266.000000</td>
+      <td>266.000000</td>
+      <td>266.000000</td>
+      <td>266.000000</td>
+      <td>266.000000</td>
+      <td>266.000000</td>
+      <td>266.000000</td>
+      <td>266.000000</td>
+      <td>266.000000</td>
+      <td>266.000000</td>
+      <td>266.000000</td>
+      <td>266.000000</td>
+      <td>266.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>7.186861</td>
+      <td>112.439643</td>
+      <td>0.353358</td>
+      <td>31.821080</td>
+      <td>6.683651</td>
+      <td>39.207975</td>
+      <td>261.107686</td>
+      <td>0.009934</td>
+      <td>0.006082</td>
+      <td>0.090947</td>
+      <td>9.283287</td>
+      <td>24.836617</td>
+      <td>0.314712</td>
+      <td>9.731371</td>
+      <td>11.897189</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>6.039870</td>
+      <td>28.938786</td>
+      <td>0.110811</td>
+      <td>13.033298</td>
+      <td>0.272169</td>
+      <td>28.512498</td>
+      <td>549.612559</td>
+      <td>0.001005</td>
+      <td>0.002949</td>
+      <td>0.198047</td>
+      <td>9.204314</td>
+      <td>9.858570</td>
+      <td>1.560128</td>
+      <td>5.785805</td>
+      <td>3.026577</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.100000</td>
+      <td>54.860000</td>
+      <td>0.057249</td>
+      <td>0.000000</td>
+      <td>5.864558</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.005079</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.060442</td>
+      <td>0.914400</td>
+      <td>0.000000</td>
+      <td>1.173515</td>
+      <td>4.595155</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>2.425000</td>
+      <td>97.000000</td>
+      <td>0.292554</td>
+      <td>28.556742</td>
+      <td>6.525110</td>
+      <td>15.867526</td>
+      <td>51.426390</td>
+      <td>0.009427</td>
+      <td>0.005693</td>
+      <td>0.001554</td>
+      <td>0.312294</td>
+      <td>18.267426</td>
+      <td>0.000000</td>
+      <td>5.835615</td>
+      <td>10.014167</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>5.600000</td>
+      <td>108.300000</td>
+      <td>0.364691</td>
+      <td>32.970487</td>
+      <td>6.703245</td>
+      <td>39.127680</td>
+      <td>161.037234</td>
+      <td>0.010165</td>
+      <td>0.007177</td>
+      <td>0.020488</td>
+      <td>6.584424</td>
+      <td>24.292560</td>
+      <td>0.000000</td>
+      <td>8.483845</td>
+      <td>11.656643</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>10.300000</td>
+      <td>122.100000</td>
+      <td>0.399708</td>
+      <td>39.331860</td>
+      <td>6.872427</td>
+      <td>59.170743</td>
+      <td>250.736063</td>
+      <td>0.010722</td>
+      <td>0.008095</td>
+      <td>0.080221</td>
+      <td>18.043368</td>
+      <td>29.794200</td>
+      <td>0.000000</td>
+      <td>12.263635</td>
+      <td>13.760751</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>27.500000</td>
+      <td>315.800000</td>
+      <td>0.627081</td>
+      <td>65.011248</td>
+      <td>7.315856</td>
+      <td>99.999999</td>
+      <td>4693.096330</td>
+      <td>0.011222</td>
+      <td>0.009412</td>
+      <td>1.394380</td>
+      <td>27.500165</td>
+      <td>65.257680</td>
+      <td>18.592800</td>
+      <td>41.731574</td>
+      <td>24.649485</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="methods_EC.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Interpretable Models</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="development_EC.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By eScience Institute, University of Washington<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
