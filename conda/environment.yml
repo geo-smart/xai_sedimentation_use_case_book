@@ -12,3 +12,6 @@ dependencies:
   - jupytext
   - plotly
   - pandas
+  - seaborn
+  - shap
+  - scikit-learn
